@@ -1,19 +1,16 @@
-# HDR Meme Maker
+# HDR Meme Maker + Deep Fryer
 
-A Python GUI application for macOS that creates **real HDR images** that appear extremely bright on HDR displays (iPhone, Mac with XDR/HDR screens).
+A Python GUI application for macOS that creates **real HDR images** and **deep fried memes** - the ultimate meme experimentation studio.
 
-This tool replicates the viral "HDR meme" effect seen on Twitter/Reddit where images appear to "glow" brighter than the rest of the screen.
+Create HDR images that appear extremely bright on HDR displays (iPhone, Mac with XDR/HDR screens), or make deep fried memes with extreme saturation, JPEG artifacts, and glitch effects.
 
 ```
-┌─────────────────────────────────────┐
-│    ██╗  ██╗██████╗ ██████╗          │
-│    ██║  ██║██╔══██╗██╔══██╗         │
-│    ███████║██║  ██║██████╔╝         │
-│    ██╔══██║██║  ██║██╔══██╗         │
-│    ██║  ██║██████╔╝██║  ██║         │
-│    ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝         │
-│    APPLE HDR MEME MAKER v3.0        │
-└─────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│  ██╗  ██╗██████╗ ██████╗   MEME STUDIO    │
+│  ██║  ██║██╔══██╗██╔══██╗  ─────────────  │
+│  ███████║██║  ██║██████╔╝  HDR + DEEPFRY  │
+│  ██║  ██║██████╔╝██║  ██║  v4.0 ARTIST    │
+└────────────────────────────────────────────┘
 ```
 
 ## How It Works
@@ -69,22 +66,49 @@ Or use the convenience script:
 
 ## Usage
 
-1. **Select Image** - Choose any image (PNG, JPEG, etc.)
-2. **Adjust Settings**:
-   - **HDR**: HDRGamma value (0-4.0) - the magic that makes it glow
-   - **SAT**: Saturation boost
-   - **CON**: Contrast
-   - **BRI**: Brightness
-   - **SHP**: Sharpness
-3. **Use Presets** (optional):
-   - `SUBTLE` - Light HDR effect
-   - `MEDIUM` - Balanced HDR
-   - `BLINDING` - Strong HDR
-   - `NUCLEAR` - Maximum eye-burning effect
-4. **Export as JPEG** - HDR only works with JPEG format
-5. **View in Photos app** - Open the exported image in macOS/iOS Photos app to see the HDR effect
+1. **Load Image** - Choose any image (PNG, JPEG, HEIC, etc.)
+2. **Adjust Settings** across 4 tabs:
 
-> **Important**: The HDR effect only appears in the **Photos app**. Preview, Finder, and most other apps will show the image as SDR.
+### BASIC Tab
+- **Saturation** - Color intensity
+- **Contrast** - Light/dark difference
+- **Brightness** - Overall luminance
+- **Sharpness** - Edge enhancement
+- **Vibrance** - Selective saturation (boosts dull colors more)
+
+### HDR Tab
+- **HDR Gamma** (0-4.0) - Apple HDRGamma EXIF tag (the magic that makes it glow)
+- **Highlights** - Boost bright areas
+- **Shadows** - Lift dark areas
+- **Bloom** - Glow effect on bright areas
+
+### DEEP FRY Tab
+- **Fry Level** - Classic deep fry effect (extreme saturation + contrast + orange tint)
+- **JPEG Crunch** - Add compression artifacts
+- **Noise/Grain** - Add random noise
+- **Posterize** - Reduce color levels
+- **Color Shift** - Shift color channels
+- **Lens Flare** - Add flares at bright points
+- **Bulge Effect** - Distort center of image
+
+### DISTORT Tab
+- **Chromatic Aberration** - Color channel separation
+- **Scanlines** - CRT-style horizontal lines
+- **Pixelate** - Reduce resolution
+- **VHS Effect** - Retro video look
+- **Glitch** - Random horizontal displacement
+
+3. **Use Presets** (optional):
+   - `RESET` - Default values
+   - `HDR GLOW` - Clean HDR effect
+   - `LIGHT FRY` - Subtle deep fry
+   - `CRISPY` - Medium deep fry
+   - `NUCLEAR` - Maximum HDR + fry
+   - `CURSED` - Full chaos mode
+4. **Export as JPEG** (for HDR) or **PNG** (for other effects)
+5. **View in Photos app** - Open the exported JPEG in macOS/iOS Photos app to see the HDR effect
+
+> **Important**: The HDR effect only appears in the **Photos app**. Preview, Finder, and most other apps will show the image as SDR. Deep fry effects work everywhere.
 
 ## Screenshots
 
@@ -106,11 +130,23 @@ Apple devices use a proprietary HDR system based on:
 
 This tool injects the HDRGamma tag using ExifTool with a custom configuration.
 
+### Deep Fried Memes
+
+Deep fried memes are a style of meme featuring intentionally degraded images with:
+
+- **Extreme saturation and contrast** - Colors pushed to maximum
+- **JPEG compression artifacts** - Low quality compression creates blocky patterns
+- **Color shifting** - Typically toward orange/yellow tones
+- **Noise and grain** - Random pixel noise
+- **Lens flares** - Often over eyes
+- **Bulge/distortion** - Warped image areas
+- **Glitch effects** - Horizontal line displacement
+
 ### Limitations
 
 - HDR effect only visible in Apple Photos app
 - May have reduced effectiveness on iOS 17+ / macOS Sonoma due to Apple's HDR processing changes
-- Requires ExifTool for metadata injection
+- Requires ExifTool for HDR metadata injection (deep fry works without it)
 
 ### References
 
@@ -118,6 +154,7 @@ This tool injects the HDRGamma tag using ExifTool with a custom configuration.
 - [Decoding MakerApple Metadata](https://juniperphoton.substack.com/p/decoding-some-hidden-magic-of-makerapple)
 - [Edit HDR Gamma](https://github.com/anteo/edit-hdr-gamma) - Automator approach
 - [Apple Developer - HDR Support](https://developer.apple.com/documentation/appkit/applying-apple-hdr-effect-to-your-photos)
+- [Know Your Meme - Deep Fried Memes](https://knowyourmeme.com/memes/deep-fried-memes)
 
 ## Dependencies
 
@@ -139,3 +176,7 @@ Pull requests welcome! Some ideas for improvements:
 - [ ] HEIC output format support
 - [ ] Batch processing
 - [ ] Preview HDR effect using EDR APIs
+- [ ] Face detection for automatic lens flare placement
+- [ ] Custom filter presets (save/load)
+- [ ] More glitch effects (datamosh, pixel sort)
+- [ ] Audio-reactive effects for video export
